@@ -1,0 +1,23 @@
+<% content_for :title, "Login" %>
+<div class = "container">
+	<div class = "form">
+		<% if @error_message %>
+			<div class = "error_message">
+				<%= @error_message %>
+			</div>
+		<% end %>
+		<%= form_tag("post_login", method: :post) do %>
+		<table>
+			<tr>
+				<td><%= label_tag(:login, "Username:") %></td>
+				<td><%= text_field_tag(:login) %></td>
+			</tr>
+			<tr>
+				<td><%= label_tag(:password, "Password:") %></td>
+				<td><%= password_field_tag(:password) %></td>
+			</tr>
+		</table>
+			<div><%= submit_tag("Login") %><div class = "button" id = "newAccount">You may <a href = "/users/new">Create Account</a></div></div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<% currentUser = User.find(@id) %>
+<% content_for :title, "Photos of #{currentUser.first_name} #{currentUser.last_name}" %>
+
+<ul class = 'photos'>
+	<li id = "newPhoto"><div class = "button"><a href = "/photos/new">New Photo</a></div></li>
+	<% for photo in @photos %>
+		<li>
+			<div class = "photo">
+				<%=image_tag(photo.file_name, alt: photo.file_name)%>
+				<% for tag in photo.tags %>
+					<%= render :partial => "tag",
+							  :locals => {:name => tag.user.first_name + " " + tag.user.last_name, :url => "/photos/index/#{tag.user.id}",:left => tag.left, :top => tag.top, :width => tag.width, :height => tag.height} %>
+				<% end %>
+			</div>
+			<p><%= photo.date_time %></p>
+			<div class = 'comments'>
+				<% for comment in photo.comments %>
+					<% user = comment.user %>
+					<%= render :partial => "comment",
+							   :locals => {:user => {:fname => user.first_name, :lname => user.last_name, :url => "/photos/index/#{user.id}"}, 
+							   			   :time => comment.date_time, 
+							   			   :text => comment.comment} %>
+				<% end %>
+			</div>
+			<div class = "button" id = "newComment"><a href = "/comments/new/<%= photo.id %>">New Comment</a></div>
+			<div class = "button" id = "newTag"><a href = "/tags/new/<%= photo.id %>">New Tag</a></div>
+		</li>
+	<% end %>
+</ul>
+

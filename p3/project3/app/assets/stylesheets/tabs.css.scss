@@ -1,0 +1,60 @@
+/* CSS Document */
+.tabs {
+	margin: 100px 0;
+	font:13px Tahoma, Geneva, sans-serif;
+}
+
+.tabs ul{
+	width: 100%;
+	overflow: auto;
+	margin: 8px 8px 0 8px;
+	padding: 0;
+}
+
+.tabs li {
+	list-style-type:none;
+	float:left;
+	margin: 0 0 0 5px;
+	background:url(left.gif) no-repeat left 0;
+	border-bottom:#cccccc 1px solid;
+	text-decoration:none;
+}
+
+.tabs .right {
+	background:url(right.gif) no-repeat right 0;
+	padding: 0 3px;
+}
+
+.tabs .mid {
+	background:url(mid.gif) repeat-x;
+}
+
+.tabs .active {
+	background:url(left-selected.gif) no-repeat left 0;
+	border-bottom:#FFFFFF 1px solid;
+}
+
+.tabs .active .right {
+	background:url(right-selected.gif) no-repeat right 0;
+}
+
+.tabs .active .mid {
+	background:url(mid-selected.gif) repeat-x;
+	font-weight:bold;
+}
+
+.tabs a, a:link {
+	padding: 3px 5px 3px 5px;
+	display:block;
+	color: #000000;
+	text-decoration:none;
+}
+
+.tabs a:hover {
+	color: #cc0000;
+}
+
+.tabs .line {
+	border-top: solid 1px #cccccc;
+	margin: -1px 8px 0 8px;
+}

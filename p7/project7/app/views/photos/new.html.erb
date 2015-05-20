@@ -1,0 +1,12 @@
+<% content_for :title, "Upload Photo" %>
+<div class = "form">
+	<% if @error_message %>
+		<div class = "error_message">
+			<p><%= @error_message %></p>
+		</div>
+	<% end %>
+	<%= form_for(@photo, method: :post, url: {action: :create}) do |form| %>
+		<div><%= form.file_field(:file) %></div>
+		<div><%= submit_tag "Upload" %></div>
+	<% end %>
+</div>

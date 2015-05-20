@@ -1,0 +1,26 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#photo {
+	margin: 10px auto;
+	text-align: center;
+}
+
+.form {
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.form table{
+	margin: 0 auto;
+}
+
+.form textarea {
+	display: block;
+	resize: none;
+	margin: 0 auto;
+}
+
+

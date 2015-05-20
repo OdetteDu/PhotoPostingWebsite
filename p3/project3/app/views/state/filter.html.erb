@@ -1,0 +1,11 @@
+<% content_for :title, "Filtered States" %>
+<p>States filtered by substring: <%= params[:substring] %></p>
+<% if @filteredStates.empty? then %>
+	<p>No match state found.</p>
+<% else %>
+	<ul>
+		<% @filteredStates.each do |s| %>
+			<li><%= s %></li>
+		<% end %>
+	</ul>
+<% end %>

@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, ul, li{
+	font:13px Tahoma, Geneva, sans-serif;
+	text-decoration:none;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	width: 100%;
+	overflow: auto;
+	margin: 8px 8px 0 8px;
+}
+
+li {
+	list-style-type:none;
+	float:left;
+	margin: 0 0 0 5px;
+	background:url(images/left.gif) no-repeat left 0;
+	border-bottom:#cccccc 1px solid;
+}
+
+.right {
+	background:url(images/right.gif) no-repeat right 0;
+	padding: 0 3px;
+}
+
+.mid {
+	background:url(images/mid.gif) repeat-x;
+}
+
+.active {
+	background:url(images/left-selected.gif) no-repeat left 0;
+	border-bottom:#FFFFFF 1px solid;
+}
+
+.active .right {
+	background:url(images/right-selected.gif) no-repeat right 0;
+}
+
+.active .mid {
+	background:url(images/mid-selected.gif) repeat-x;
+	font-weight:bold;
+}
+
+a, a:link {
+	padding: 3px 5px 3px 5px;
+	display:block;
+	color: #000000;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #cc0000;
+}
+
+.line {
+	border-top: solid 1px #cccccc;
+	margin: -1px 8px 0 8px;
+}

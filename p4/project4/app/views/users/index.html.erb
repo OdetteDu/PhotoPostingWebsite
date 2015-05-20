@@ -1,0 +1,7 @@
+<% content_for :title, "All Users" %>
+<ul>
+<% for user in @users %>
+	<li><a href = "/photos/index/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name %></a></li>
+<% end %>
+</ul>
+

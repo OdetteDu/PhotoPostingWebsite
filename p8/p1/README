@@ -1,0 +1,9 @@
+I made two class for the search part:
+
+1. AjaxRequest: 
+This class is very general, it can be used for almost any ajax request. For example, it can be used to get your friend's new posts while you are browsing the old posts on facebook, or you can use this to get new email while you are in your inbox. Because this part is very general, you can basically use it for anything you want to send an simple ajax request.
+
+2. Search:
+This class uses AjaxRequest to get search result. It ask the search field and search result container to do the search. However, you can use this to search for image, or text, or anything. You can pass a function to set whatever form you want the innerHtml to be set after you get the response function. Because you need to pass a url to this function, so that the search results will depends on the server, so that this is a very general search function.
+
+Actually because this class takes a textField, and a container, you can even use this class to update the container by passing the textField, and it doesn't only do search, it can do anything else if that task takes only one text field, and need to update the innerHTML in one container.

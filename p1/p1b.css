@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font:13px Tahoma, Geneva, sans-serif;
+	text-decoration:none;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	border:10px solid #d0d0ff;
+	width:578px;
+	height:185px;
+	margin: 22px 35px 37px 21px;
+}
+
+table {
+	margin: 20px;
+}
+
+th, td {
+	padding: 0 10px 0 0;
+	height: 20px;
+	text-align:left;
+}
+
+.footer td {
+	border-top:2px solid #000;
+	height: 27px;
+	font-weight:bold;
+}
+
+.alignCenter {
+	text-align:center;
+}
+

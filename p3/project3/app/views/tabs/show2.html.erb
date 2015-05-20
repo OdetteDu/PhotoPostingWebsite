@@ -1,0 +1,10 @@
+<% content_for :title, "Show Two Tabs" %>
+<div class = "margin100">
+<%= render :partial => "tabs",
+			:locals => {:tabs => @firstTabs, :selectedTab => @firstSelected} %>
+</div>
+
+<div class = "margin100">
+<%= render :partial => "tabs",
+			:locals => {:tabs => @secondTabs, :selectedTab => @secondSelected} %>
+</div>

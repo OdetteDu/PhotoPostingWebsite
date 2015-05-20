@@ -1,0 +1,5 @@
+The loophole is that in movies_controller, it uses find_by_sql to get the searched movies. And it doesn't escape any special character in the code in genre, it doesn't parse the genre in the params to see if it is realy a genre or a piece of code. Thus, I can write my sql code to get the credit card information.
+
+To attack, I make the select movies permantly false by using genre = '', and I union this query with my select customer query. And I make sure the type matches.
+
+To fix the problem, I use rails where method and pass the params to be specified to genre. This way, rails will automatically escapse the special character such as quotation mark for me, so that my attack sql query becomes the genre name. Thus, my attack end up with an empty result.

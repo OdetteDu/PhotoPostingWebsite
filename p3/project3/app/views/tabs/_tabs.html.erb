@@ -1,0 +1,18 @@
+<div class = "tabs">
+	<ul>
+		<% tabs.each do |tab| %>
+			<% if tab[:label] == selectedTab then %>
+				<li class = "active">
+			<% else %>
+				<li>
+			<% end %>
+					<div class="right">
+						<div class="mid">
+							<a href= "<%= tab[:url] %>"><%= tab[:label] %></a>
+						</div>
+					</div>
+				</li>
+		<% end %>
+	</ul>
+	<div class="line"></div>
+</div>

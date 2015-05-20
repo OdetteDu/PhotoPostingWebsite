@@ -1,0 +1,22 @@
+<% currentUser = User.find(@id) %>
+<% content_for :title, "Photos of #{currentUser.first_name} #{currentUser.last_name}" %>
+
+<ul class = 'photos'>
+	<li id = "newPhoto"><div class = "button"><a href = "/photos/new">New Photo</a></div></li>
+	<% for photo in @photos %>
+		<li>
+			<%=image_tag(photo.file_name, alt: photo.file_name)%>
+			<p><%= photo.date_time %></p>
+			<div class = 'comments'>
+				<% for comment in photo.comments %>
+					<% user = User.find(comment.user_id) %>
+					<%= render :partial => "comment",
+							   :locals => {:user => {:fname => user.first_name, :lname => user.last_name, :url => "/photos/index/#{user.id}"}, 
+							   			   :time => comment.date_time, 
+							   			   :text => comment.comment} %>
+				<% end %>
+			</div>
+			<div class = "button" id = "newComment"><a href = "/comments/new/<%= photo.id %>">New Comment</a></div>
+		</li>
+	<% end %>
+</ul>

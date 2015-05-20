@@ -1,0 +1,44 @@
+<% content_for :title, "New Tag" %>
+
+<% content_for :body_Javascript  do %>
+	<%= javascript_include_tag 'Tagger' %>
+	<%= javascript_include_tag 'tags' %>
+<% end %>
+
+<div id = "tagView">
+	<div id = "photo">
+		<%=image_tag(@photo.file_name, alt: @photo.file_name)%>
+		<div id = "feedback"></div>
+	</div>
+	<div class = "form">
+		<% if @error_message %>
+			<p class = "error_message"><%= @error_message %></p>
+		<% end %>
+		<%= form_for(@tag, method: :post, url: {action: :create, id: @photo.id}) do |form| %>
+		<table>
+			<tr>
+				<td><%= form.hidden_field(:left) %></td>
+			</tr>
+			<tr>
+				<td><%= form.hidden_field(:top) %></td>
+			</tr>
+			<tr>
+				<td><%= form.hidden_field(:width) %></td>
+			</tr>
+			<tr>
+				<td><%= form.hidden_field(:height) %></td>
+			</tr>
+			<tr>
+				<td><%= form.label(:user, "Select a User To Tag: ") %></td>
+				<td>
+					<% users_array = User.all.map { |user| [user.first_name + " " +user.last_name, user.id]} %>
+					<%= form.select(:user, users_array) %>
+				</td>
+			</tr>
+			<tr>
+				<td><%= submit_tag "Submit" %></td>
+			</tr>
+		</table>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.photos{
+	padding: 0;
+	margin: 20px 0 20px 0;
+	text-align: center;
+	width: 840px;
+}
+.photos li {
+	list-style: none;
+	padding: 0;
+	margin: 20px auto 20px auto;
+	border:#FEDDDD 1px solid;
+}
+
+.photos img {
+	border: none;
+	margin: 20px 0 0 0;
+	max-width: 820px;
+}
+
+.photos p {
+	margin: 0;
+}
+
+.comments {
+	margin: 20px 0 20px 0;
+}
+
+.comment {
+	text-align: left;
+	border:#FEDDDD 1px solid;
+	margin: 20px;
+	padding: 20px;
+}
+
+.comment h3{
+	display: inline;
+	font-size: 14px;
+	margin: 10px 20px 10px 10px;
+}
+
+.comment h4{
+	display: inline;
+	font-size: 14px;
+	font-weight: normal;
+	color: #ffbbd1;
+}
+
+.comment p{
+	margin: 10px 10px 0 10px;
+}
+
+#newComment{
+	margin: -10px auto 20px auto;
+}
+
+#newPhoto{
+	border: none;
+	margin: -20px 0 0 0;
+}
+
+.form div{
+	display: inline-block;
+}
+

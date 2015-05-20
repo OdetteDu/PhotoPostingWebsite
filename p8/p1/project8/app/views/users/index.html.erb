@@ -1,0 +1,26 @@
+<% content_for :title, "All Users" %>
+
+<% content_for :body_Javascript  do %>
+<%= javascript_include_tag 'AjaxRequest' %>
+	<%= javascript_include_tag 'Search' %>
+	<%= javascript_include_tag 'users' %>
+<% end %>
+
+<div id = "usersList">
+	<h1>All Users</h1>
+	<ul>
+	<% for user in @users %>
+		<li><a href = "/photos/index/<%= user.id %>"><%= user.first_name %>&nbsp;<%= user.last_name %></a></li>
+	<% end %>
+	</ul>
+</div>
+
+<div id = "search">
+	<div id = "searchForm">
+		<h1>Search<input type="text" id = "searchField"></h1>
+	</div>
+
+	<div id = "searchResults">
+	</div>
+</div>
+

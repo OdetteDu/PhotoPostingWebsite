@@ -1,0 +1,28 @@
+<% content_for :title, "New Comment" %>
+<div id = "photo">
+	<%=image_tag(@photo.file_name, alt: @photo.file_name)%>
+</div>
+<div class = "form">
+	<% if @error_message %>
+		<div class = "error_message">
+			<p><%= @error_message %></p>
+		</div>
+	<% end %>
+	<% if @comment %>
+		<div class = "error_message">
+			<% @comment.errors.full_messages.each do |msg| %>
+				<p><%= msg %></p>
+			<% end %>
+		</div>
+	<% end %>
+	<%= form_for(@comment, method: :post, url: {action: :create, id: @photo.id}) do |form| %>
+	<table>
+		<tr>
+			<td><%= form.text_area(:comment, size: "50x10") %></td>
+		</tr>
+		<tr>
+			<td><%= submit_tag "Post" %></td>
+		</tr>
+	</table>
+	<% end %>
+</div>
